@@ -27,7 +27,6 @@
         </div>   
         <div style="display: flex; justify-content: center;">
              <div style="display: flex; gap: 10px;">
-            <h3 >Total Counts : </h3>
             <h3 id="counts"></h3>
         </div>
         </div>
@@ -39,7 +38,7 @@
    let keys = document.querySelectorAll(".keys");
    let counts = document.querySelector("#counts");
    let rstBtn = document.querySelector("#rstBtn");
-   let count = 0;
+   let count = "";
    counts.innerText = count;
   
    let isXon = true;
@@ -75,7 +74,6 @@ const checkWinner = () => {
    keys.forEach((eachKey)=>{
         eachKey.addEventListener("click",(event)=>{
            count +=1;
-            counts.innerText = count;
            event.target.disabled = true;
             if(isXon === true){
                 eachKey.style.color = "orange"
@@ -98,7 +96,6 @@ const checkWinner = () => {
 
 rstBtn.addEventListener("click",()=>{
    count =0;
-   counts.innerText = count;
    isXon = true;
 
    keys.forEach((eachKey)=> {
